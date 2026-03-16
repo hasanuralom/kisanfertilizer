@@ -1,3 +1,16 @@
+import threading
+import time
+import requests
+
+def keep_alive():
+    while True:
+        time.sleep(840)  # every 14 minutes
+        try:
+            requests.get("https://kisanfertilizer.live")
+        except:
+            pass
+
+threading.Thread(target=keep_alive, daemon=True).start()
 import streamlit as st
 import pandas as pd
 from core import FERTILIZERS, CROPS, UNITS, CATEGORIES, compute_all_strategies, scale_npk
