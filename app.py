@@ -12,6 +12,12 @@ def keep_alive():
 
 threading.Thread(target=keep_alive, daemon=True).start()
 import streamlit as st
+st.markdown(
+    """
+    <meta name="google-site-verification" content="google25accbcc232bceaa" />
+    """,
+    unsafe_allow_html=True
+)
 import pandas as pd
 from core import FERTILIZERS, CROPS, UNITS, CATEGORIES, compute_all_strategies, scale_npk
 
